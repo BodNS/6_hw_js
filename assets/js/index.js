@@ -42,19 +42,40 @@ function camalCase(stroka) {
   return arr1.join("");
 }
 console.log(camalCase(stroka));
-*/
+*//*
 //task4
 let chislo = prompt("Введите число");
-let razriadnost = prompt("Введите разрядность числа");
+let razriadnost = parseInt(prompt("Введите разрядность числа"));
 function razriadnostChisla(chislo, razriadnost) {
-  //a=(x,y)=>[...Array(y-x.length)].map(_=>"0").join('')+x;
-  let test = razriadnost - chislo.length;
-  for (let i = 0; i < test; i++) {
-    chislo = "0" + chislo;
-    console.log(chislo);
-    console.log(i);
+  let flag = false, i = 1;
+  if (chislo<0) {
+    chislo = String(Math.abs(chislo));
+    flag = true;
   }
-
+  let dlinaChisla = razriadnost-chislo.length;
+    while (i <= dlinaChisla) {
+    chislo = "0" + chislo;
+    i++;
+  }
+  if (flag == true) {
+    chislo = '-'+chislo;
+  }
   return chislo;
 }
 console.log(razriadnostChisla(chislo, razriadnost));
+*//*
+//task5
+let worker = {
+  firstName: "John",
+  lastName: "Smith",
+  profession: "Programmer",
+  workExperience: 31,
+  oklad: 1000,
+  visluga: function () {
+    (this.workExperience>8) ? this.oklad = this.oklad + this.oklad*0.1 : 
+      (this.workExperience>5) ? this.oklad = this.oklad + this.oklad*0.05 : this.oklad*1;
+    console.log(`${this.firstName} ${this.lastName} получает ${this.oklad}$`); 
+  }
+}
+worker.visluga();
+*/
