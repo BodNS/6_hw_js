@@ -3,7 +3,7 @@
 let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 function sumEvenElement(a) {
   let sum = 0;
-  for (let i = 0; i <= a.length; i += 2) {
+  for (let i = 0; i <= a.length-1; i += 2) {
     sum += a[i];
   }
   return sum;
@@ -69,11 +69,11 @@ let worker = {
   firstName: "John",
   lastName: "Smith",
   profession: "Programmer",
-  workExperience: 31,
+  workExperience: 7,
   oklad: 1000,
   visluga: function () {
-    (this.workExperience>8) ? this.oklad = this.oklad + this.oklad*0.1 : 
-      (this.workExperience>5) ? this.oklad = this.oklad + this.oklad*0.05 : this.oklad*1;
+    (this.workExperience>8) ? this.oklad += this.oklad*0.1 : 
+      (this.workExperience>5) ? this.oklad += this.oklad*0.05 : this.oklad*1;
     console.log(`${this.firstName} ${this.lastName} получает ${this.oklad}$`); 
   }
 }
